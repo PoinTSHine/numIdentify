@@ -16,6 +16,7 @@ for _name in ("Microsoft YaHei", "SimHei", "Arial Unicode MS", "SimSun"):
         plt.rcParams['font.sans-serif'] = [_name]
         break
 plt.rcParams['axes.unicode_minus'] = False
+
 from PyQt5.QtGui import QPainter, QPen, QColor, QPixmap
 from PyQt5.QtCore import Qt, QPoint
 
@@ -29,7 +30,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 device = get_device()
 model = Minst_cnn(num_classes=10).to(device)
 try:
-    model.load_state_dict(torch.load("mnist_cnn.pth", map_location=device))
+    model.load_state_dict(torch.load("mnist_cnn.pth", map_location=device, weights_only=True))
     print("[note] Model loaded successfully.")
 except FileNotFoundError:
     print("[error] Model file 'mnist_cnn.pth' not found.")
