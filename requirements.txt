@@ -1,6 +1,7 @@
-torch
-torchvision
-numpy
-Pillow
-PyQt5
-matplotlib
+matplotlib==3.10.8
+numpy==2.2.5
+Pillow==12.1.0
+PyQt5==5.15.11
+pyqt5_sip==12.18.0
+torch==2.10.0+cu130
+torchvision==0.25.0+cu130
