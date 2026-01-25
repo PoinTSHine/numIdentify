@@ -28,7 +28,14 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 device = get_device()
 model = Minst_cnn(num_classes=10).to(device)
-model.load_state_dict(torch.load("mnist_cnn.pth", map_location=device))
+try:
+    model.load_state_dict(torch.load("mnist_cnn.pth", map_location=device))
+    print("[note] Model loaded successfully.")
+except FileNotFoundError:
+    print("[error] Model file 'mnist_cnn.pth' not found.")
+    print("[error] Please train the model by 'python train.py'.")
+    sys.exit(1)
+
 model.eval()
 
 transform = transforms.Compose([

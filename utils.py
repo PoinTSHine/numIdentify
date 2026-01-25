@@ -7,10 +7,10 @@ def get_device():
     if torch.cuda.is_available():
         device = torch.device("cuda")
         device_name = torch.cuda.get_device_name(0)
-        print(f"using device:{device_name}")
+        print("[note] using device: {}".format(device_name))
     else:
         device = torch.device("cpu")
-        print("using device: cpu")
+        print("[note] using device: cpu")
     return device
 
 def load_mnist_data(batch_size=64, data_path="./data"):
@@ -24,7 +24,8 @@ def load_mnist_data(batch_size=64, data_path="./data"):
     
     train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
-    print("train_dataset: {}\ntest_dataset: {}".format(len(train_dataset), len(test_dataset)))
+    print("[note] train_dataset: {}".format(len(train_dataset)))
+    print("[note] test_dataset: {}".format(len(test_dataset)))
     
     return train_loader, test_loader
 
