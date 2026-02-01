@@ -5,3 +5,5 @@ PyQt5==5.15.11
 pyqt5_sip==12.18.0
 torch==2.10.0+cu130
 torchvision==0.25.0+cu130
+flask==3.1.2
+flask_cors==6.0.2

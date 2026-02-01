@@ -18,6 +18,8 @@
 - NumPy
 - PIL
 - matplotlib
+- flask
+- flask_cors
 
 详细依赖见 `requirements.txt` 文件。
 
@@ -33,7 +35,7 @@ cd numIdentify
 ### 安装环境、依赖
 
 ```bash
-conda create -n numIdentify python=3.10.16
+conda create -n numIdentify python=3.10.19
 conda activate numIdentify
 pip install -r requirements.txt
 ```
@@ -56,6 +58,14 @@ python gui.py
 
 运行时会自动加载 `.\mnist_cnn.pth` 模型文件。如果文件不存在，会提示错误并退出。
 
+#### 运行前后端程序
+
+```bash
+python app.py
+```
+
+打开`font.html`页面，即可使用应用。
+
 ## 项目结构
 
 ```bash
@@ -66,6 +76,8 @@ numIdentify/
   ├── train.py          # 模型训练脚本
   ├── utils.py          # 工具函数
   ├── requirements.txt  # 项目依赖
+  ├── font.html         # 前端页面
+  ├── app.py            # 后端程序
   └── README.md         # 项目说明文档
 ```
 
